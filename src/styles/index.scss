@@ -1,0 +1,192 @@
+:root {
+  --primary-header-color: #ffffff;
+  --subtext-color: #d3d3d3;
+  --form-panel-background-color: #f2f2f2;
+  --form-blue-color: #348fbc;
+  --form-disabled-color: #909090;
+  --selected-option-color: #212121;
+  --font-family: 'Open Sans', sans-serif;
+  --font-family-medium: 'Open Sans Medium', sans-serif;
+  --medium-font-weight: 400;
+  --bold-font-weight: 800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: url('/src/images/car-finder-bg.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  main {
+    margin: 0 auto;
+    padding: 2rem;
+    width: 85%;
+
+    section {
+      > h1 {
+        font-weight: 800;
+        font-size: 36px;
+        margin-bottom: 0.5rem;
+        color: var(--primary-header-color);
+      }
+
+      > h4 {
+        font-family: var(--font-family-medium);
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 2rem;
+        color: var(--subtext-color);
+      }
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 1rem;
+      flex-wrap: wrap;
+      background: var(--form-panel-background-color);
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+
+      section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1 1 150px;
+        min-width: 150px;
+        position: relative;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          &::after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            right: -0.5rem;
+            width: 1px;
+            height: 80%;
+            background: var(--form-disabled-color);
+          }
+        }
+
+        label {
+          font-weight: var(--bold-font-weight);
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          color: var(--form-blue-color);
+        }
+
+        .text-disabled {
+          color: var(--form-disabled-color);
+        }
+
+        .blue-fieldset {
+          border: 1px solid var(--form-blue-color);
+        }
+
+        fieldset {
+          border: 1px solid var(--form-disabled-color);
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          border-radius: 5px;
+
+          legend {
+            margin: 5px;
+            padding: 2px;
+            font-size: 10px;
+            color: var(--form-blue-color);
+          }
+        }
+
+        select {
+          option {
+            color: var(--selected-option-color);
+            background-color: white;
+            font-family: var(--font-family);
+            font-size: 14px;
+            border-radius: 5px;
+
+            &:hover {
+              background-color: var(--form-blue-color);
+              color: white;
+            }
+          }
+
+          &:focus {
+            border-color: var(--form-blue-color);
+            outline: none;
+          }
+        }
+
+        .custom-dropdown-wrapper {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          top: -5px;
+
+          .custom-dropdown {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 0;
+            background-color: transparent;
+            cursor: pointer;
+
+            &:focus-visible {
+              outline: none;
+            }
+          }
+
+          &::after {
+            content: '▼';
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            pointer-events: none;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: #555;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    main {
+      form {
+        flex-direction: column;
+
+        section {
+          width: 100%;
+
+          &:not(:last-child) {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

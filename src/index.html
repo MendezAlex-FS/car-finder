@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment: Used Car Finder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1 class="text-bold">Find Your Dream Vehicle</h1>
+      <h4 class="text-medium">Have you been dreaming about getting a new vehicle<br>Well, you're in luck.</h4>
+    </section>
+    <form id="car-form">
+      <section id="year-section">
+        <label for="year-dropdown">Year</label>
+        <fieldset class="blue-fieldset">
+          <legend>Year</legend>
+          <div class="custom-dropdown-wrapper">
+            <select id="year-dropdown" class="custom-dropdown">
+              <option value="">Select Year</option>
+            </select>
+          </div>
+        </fieldset>
+      </section>
+      <section id="make-section">
+        <label for="make-dropdown" class="text-disabled">Make</label>
+        <fieldset id="make-fieldset">
+          <legend class="text-disabled">Make</legend>
+          <div class="custom-dropdown-wrapper">
+            <select id="make-dropdown" class="custom-dropdown" disabled>
+              <option value="">Select Make</option>
+            </select>
+          </div>
+        </fieldset>
+      </section>
+      <section id="model-section">
+        <label for="model-dropdown" class="text-disabled">Model</label>
+        <fieldset id="model-fieldset">
+          <legend class="text-disabled">Model</legend>
+          <div class="custom-dropdown-wrapper">
+            <select id="model-dropdown" class="custom-dropdown" disabled>
+              <option value="">Select Model</option>
+            </select>
+          </div>
+        </fieldset>
+      </section>
+    </form>
+  </main>
+  <script src="bundle.js"></script>
+
+</body>
+
+</html>
